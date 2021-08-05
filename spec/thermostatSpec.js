@@ -1,4 +1,6 @@
-describe("Thermostat", () => { 
+"use strict";
+describe("Thermostat", () => {
+  let thermostat; 
   beforeEach(() => { 
     thermostat = new Thermostat();
   })
@@ -17,4 +19,16 @@ describe("Thermostat", () => {
     thermostat.degrees = 10
     expect(function() { thermostat.down() }).toThrow('Can\'t go below 10 degrees.')
   });
+
+  it ("cannot turn temp above 25 when power save is on", () => {
+    thermostat.powerSaveMode = true
+    thermostat.degrees = 25
+    expect(function() { thermostat.up() }).toThrow('Max reached (Power Saving Mode on)')
+  })
+
+  it ("cannot turn temp above 32 when power save is off", () => {
+    thermostat.powerSaveMode = false
+    thermostat.degrees = 32
+    expect(function() {thermostat.up() }).toThrow('Max reached (Power Saving Mode off)')
+  })
 });
