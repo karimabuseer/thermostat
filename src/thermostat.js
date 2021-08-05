@@ -3,7 +3,7 @@
 class Thermostat { 
   constructor() { 
   this.degrees = 20;
-  this.powerSaveMode = false
+  this.powerSaveMode = true
   }
 
   up() {
@@ -21,12 +21,20 @@ class Thermostat {
     throw('Can\'t go below 10 degrees.')
   }
 
-  powerSaveCheck(){
+  powerSaveCheck() {
     if (this.powerSaveMode === true && this.degrees === 25) {
       throw('Max reached (Power Saving Mode on)')
     }
     else if (this.powerSaveMode === false && this.degrees === 32){
       throw('Max reached (Power Saving Mode off)')
     }
+  }
+
+  powerSaveOff() {
+    this.powerSaveMode = false
+  }
+
+  powerSaveOn() {
+    this.powerSaveMode = true
   }
 }

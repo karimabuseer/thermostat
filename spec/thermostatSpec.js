@@ -31,4 +31,10 @@ describe("Thermostat", () => {
     thermostat.degrees = 32
     expect(function() {thermostat.up() }).toThrow('Max reached (Power Saving Mode off)')
   })
+
+  it ("starts with power saving mode on, but can be turned off", () => {
+    expect(thermostat.powerSaveMode).toEqual(true)
+    thermostat.powerSaveOff()
+    expect(thermostat.powerSaveMode).toEqual(false)
+  })
 });
