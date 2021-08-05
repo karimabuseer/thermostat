@@ -48,4 +48,12 @@ describe("Thermostat", () => {
     thermostat.reset()
     expect(thermostat.degrees).toEqual(20)
   });
+
+  it ("you can ask about thermostat's current energy usage", () => {
+    expect(thermostat.currentUsage()).toEqual('medium-usage')
+    thermostat.degrees = 26
+    expect(thermostat.currentUsage()).toEqual('high-usage')
+    thermostat.degrees = 10
+    expect(thermostat.currentUsage()).toEqual('low-usage')
+  })
 });
