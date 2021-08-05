@@ -37,4 +37,8 @@ class Thermostat {
   powerSaveOn() {
     this.powerSaveMode = true
   }
+
+  reset() {
+    this.degrees = 20
+  }
 }
