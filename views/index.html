@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Thermostat</title>
-<script src= "../src/thermostat.js"> </script>
-<script src= "../src/interface.js"> </script>
+  <head>
+    <title>Thermostat</title>
+    <script src= "../src/thermostat.js"> </script>
+    <script src= "../src/interface.js"> </script>
 
-</head>
+  </head>
 
-<body>
-  <div id="temperature"> </div>
-  <button id='tempup' type="button">Temperature up</button>
-  <button id='tempdown' type="button">Temperature down</button><br>
-  <button id='pson' type="button">Power Saving On</button>
-  <button id='psoff' type="button">Power Saving Off</button>
-  <div>Powering Saving Mode on? </div>
-  <div id="powersaving"> </div>
+  <body>
+    <div>The temperature of <span id='displaycity'></span> is: <span id='weather'></span></div>
+    <div id="temperature"> </div>
+    <button id='tempup' type="button">Temperature up</button>
+    <button id='tempdown' type="button">Temperature down</button><br>
+    <button id='pson' type="button">Power Saving On</button>
+    <button id='psoff' type="button">Power Saving Off</button>
+    <select name='city' id='city'>
+      <option value='London'>London</option>
+      <option value='Watford,uk'>Watford</option>
+      <option value='New York'>New York</option>
+    </select>
+    <div>Powering Saving Mode on? </div>
+    <div id="powersaving"> </div>
 
-</body>
+  </body>
 
 </html>

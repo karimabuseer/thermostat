@@ -27,6 +27,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
     document.getElementById("powersaving").innerHTML = thermostat.powerSaveMode;
   });
 
+  document.getElementById("city").addEventListener("change",function(event) {
+    const city = event.target.value
+    document.getElementById("displaycity").innerHTML = city;
+    
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e175f3ed1065a9c33281bc2759e0871a&units=metric`)
+  .then(response => response.json())
+  .then(data => document.getElementById("weather").innerHTML = data.main.temp);
+  });
+
   document.getElementById("temperature").innerHTML = thermostat.degrees;
   document.getElementById("powersaving").innerHTML = thermostat.powerSaveMode;
+
+  
 });
